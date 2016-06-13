@@ -52,9 +52,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 </head>
 <body>
   <div id="main">
-    Hello world!   <!-- You'll be deleting this line in the course -->
-
-    <!--
+       <!--
     Everything from here to the <script> tag below is the skeleton of your
     website. Your code will add information to each of the sections of the
     resume below. You can pretty easily figure out what each section will
@@ -112,29 +110,75 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     /*
         an opening and closing set of slash asterisks for block comments.
     */
+    var formattedName = HTMLheaderName.replace("%data%", bio.name);
+    console.log(bio.name);
+    $('#name').append(formattedName);
 
 
     if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('topContacts').style.display = 'none';
+      document.getElementById('topContacts').style.backgroundColor = 'black';
     }
     if(document.getElementsByTagName('h1').length === 0) {
-      document.getElementById('header').style.display = 'none';
+      document.getElementById('header').style.backgroundColor = 'black';
     }
     if(document.getElementsByClassName('work-entry').length === 0) {
-      document.getElementById('workExperience').style.display = 'none';
+      document.getElementById('workExperience').style.backgroundColor = 'black';
     }
     if(document.getElementsByClassName('project-entry').length === 0) {
-      document.getElementById('projects').style.display = 'none';
+      document.getElementById('projects').style.backgroundColor = 'black';
     }
     if(document.getElementsByClassName('education-entry').length === 0) {
-      document.getElementById('education').style.display = 'none';
+      document.getElementById('education').style.backgroundColor = 'black';
     }
     if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('lets-connect').style.display = 'none';
+      document.getElementById('lets-connect').style.backgroundColor = 'black';
     }
     if(document.getElementById('map') === null) {
-      document.getElementById('mapDiv').style.display = 'none';
+      document.getElementById('mapDiv').style.backgroundColor = 'black';
     }
+
+    if(bio.skills.length > 0) {
+      $('#header').append(HTMLskillsStart);
+      var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+      $("#skills").append(formattedSkill);
+      var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+      $("#skills").append(formattedSkill);
+      var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+      $("#skills").append(formattedSkill);
+
+    }
+    
+  function DislplayWork() {
+    for (job in work.jobs) {
+    $("#workExperience").append(HTMLworkStart);  
+      var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+      var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+      var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+      var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+      var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+
+      var formattedName = formattedEmployer + formattedTitle;
+
+      $(".work-entry:last").append(formattedName);
+      $(".work-entry:last").append(formattedDates);
+      $(".work-entry:last").append(formattedLocation);
+      $(".work-entry:last").append(formattedDescription);
+    }
+  }
+DislplayWork();
+
+$(document).click(function(loc) {
+  logClicks(loc.pageX, loc.pageY);
+});
+  
+/*function inName(names) {
+var arr_names = names.trim().split(' ');
+console.log(names);
+var cap_names = arr_names[0] + arr_names[1].toUpperCase();
+}
+  
+ $('#main').append(internationalizeButton); 
+ */
   </script>
 </body>
 </html>

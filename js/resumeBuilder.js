@@ -12,7 +12,7 @@ var bio = {
 		"email" : "bakerzeel@gmail.com",
 		"github" : "bakerzeel",
 		"twitter" : "Alex",
-		"location" : "IE"
+		"location" : "Ireland"
 	},
 	"wel_message" : "hey you",
 	"skills" : skills
@@ -23,7 +23,7 @@ var work = {
 	{
 		"employer" : "Zeel",
 		"title" : "Technologist",
-		"location" : "UA",
+		"location" : "Ukraine",
 		"dates" : "2011-2015",
 		"description" : "baker R&D"
 
@@ -31,7 +31,7 @@ var work = {
 	{
 		"employer" : "Kerry",
 		"title" : "Technologist",
-		"location" : "IE",
+		"location" : "Ireland",
 		"dates" : "2015-curr",
 		"description" : "s_baker"
 	},
@@ -57,7 +57,7 @@ var education = {
 	"schools" : [
 	{
 		"name" : "1",
-		"location" : "Monte",
+		"location" : "Ukraine",
 		"degree" : "Full middle",
 		"majors" : "12",
 		"dates" : "1994-2005",
@@ -77,3 +77,5 @@ var education = {
 /*
 This is empty on purpose! Your code to build the resume will go here.
  */
+
+ $("#mapDiv").append(googleMap);

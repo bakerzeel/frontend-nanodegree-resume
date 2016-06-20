@@ -170,6 +170,8 @@ DislplayWork();
 $(document).click(function(loc) {
   logClicks(loc.pageX, loc.pageY);
 });
+console.log(typeof $(document).click);
+
   
 /*function inName(names) {
 var arr_names = names.trim().split(' ');
@@ -179,6 +181,36 @@ var cap_names = arr_names[0] + arr_names[1].toUpperCase();
   
  $('#main').append(internationalizeButton); 
  */
+
+ projects.display = function(){
+
+for(item in projects) {
+  if (item !== "display") {
+    $("#projects").append(HTMLprojectStart);
+    var formattedTitle = HTMLprojectTitle.replace("%data%", projects[item].title);
+       
+    var formattedDates = HTMLprojectDates.replace("%data%", projects[item].dates);
+    
+    var formattedDescription = HTMLprojectDescription.replace("%data%", projects[item].description);
+
+    $(".project-entry:last").append(formattedTitle);
+    $(".project-entry:last").append(formattedDates);
+    $(".project-entry:last").append(formattedDescription);
+   
+    if (projects[item].images.length > 0) {
+
+      var formattedImage = HTMLprojectImage.replace("%data%", projects[item].images);
+
+      $(".project-entry:last").append(formattedImage);
+    }
+    
+    }
+  else {
+  }
+  }
+}
+projects.display();
+
   </script>
 </body>
 </html>

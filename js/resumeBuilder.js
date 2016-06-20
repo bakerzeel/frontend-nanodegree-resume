@@ -35,16 +35,23 @@ var work = {
 		"dates" : "2015-curr",
 		"description" : "s_baker"
 	},
-		
 	]
 }
 
-var projects = {
-	"title" : "All about all",
-	"dates" : "2014",
-	"description" : "all around the same",
-	"images" : "blank"
-}
+var projects = [
+	{	
+		"title" : "All about all",
+		"dates" : "2014",
+		"description" : "all around the same",
+		"images" : "C:/\Users/\Олександр/\version-control/\frontend-nanodegree-resume/\images"
+	},
+	{
+		"title" : "Sofia",
+		"dates" : "2015",
+		"description" : "the most exciting one",
+		"images" : "../images/sofia.jpeg"
+	},
+	]
 
 var education = {
 	"schools" : [
